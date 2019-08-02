@@ -1,18 +1,18 @@
-import MenuScreen from "../screens/MenuScreen"
-import Info from "../screens/Info"
-import { createBottomTabNavigator } from "react-navigation"
+import React from 'react'
+import { createStackNavigator } from 'react-navigation'
+import MenuScreen from '../screens/MenuScreen'
+import ChokingScreen from '../screens/ChokingScreen'
 
-const routeConfig = {
-	Info: {
-		screen: Info
+const MenuNavigation = createStackNavigator(
+	{
+		MenuScreen: ({ navigation }) => <MenuScreen {...navigation} />,
+		ChokingScreen: ChokingScreen
 	},
-	Home: {
-		screen: MenuScreen
+	{
+		defaultNavigationOptions: {
+			header: () => {}
+		}
 	}
-}
+)
 
-const tabConfig = {
-	swipeEnabled: true,
-	animationEnabled: true
-}
-export default createBottomTabNavigator(routeConfig, tabConfig)
+export default MenuNavigation

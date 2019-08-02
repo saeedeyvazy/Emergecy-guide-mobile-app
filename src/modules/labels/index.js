@@ -1,4 +1,6 @@
-import { menu } from "./menu"
+import { menu } from './menu'
+import { tabs } from './tabs'
 export const labels = {
-	menu
+	menu,
+	tabs
 }

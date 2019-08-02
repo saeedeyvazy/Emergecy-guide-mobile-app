@@ -1,15 +1,27 @@
-import { createStackNavigator, createAppContainer } from "react-navigation"
-import MenuNavigation from "./MenuNavigation"
+import React from 'react'
+import MainNavigation from './MainNavigation'
+import { createStackNavigator } from 'react-navigation'
+import { labels } from '../modules/labels'
 
 const Navigation = createStackNavigator(
 	{
-		MenuScreen: { screen: MenuNavigation }
+		MainScreen: {
+			screen: MainNavigation,
+			navigationOptions: ({ navigation }) => ({
+				title: labels.tabs.homeHeader
+			})
+		}
 	},
 	{
 		defaultNavigationOptions: {
 			headerStyle: {
-				backgroundColor: "#a50408",
+				backgroundColor: '#a50408',
 				elevation: 0
+			},
+			headerTitleStyle: {
+				color: 'white',
+				textAlign: 'center',
+				flex: 1
 			}
 		}
 	}
