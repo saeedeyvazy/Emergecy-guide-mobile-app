@@ -1,8 +1,4 @@
 import React from "react"
-import { Text } from "native-base"
-import MenuScreen from "./src/screens/MenuScreen"
-function App() {
-	return <MenuScreen />
-}
-
-export default App
+import { createAppContainer, createStackNavigator } from "react-navigation"
+import Navigation from "./src/navigation"
+export default createAppContainer(Navigation)
